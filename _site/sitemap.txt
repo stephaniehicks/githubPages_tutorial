@@ -1,0 +1,10 @@
+
+http://stephaniehicks.github.io/githubPages_tutorial/atom.xml
+http://stephaniehicks.github.io/githubPages_tutorial/index.html
+http://stephaniehicks.github.io/githubPages_tutorial/pages/github-intro.html
+http://stephaniehicks.github.io/githubPages_tutorial/pages/githubpages-jekyll.html
+http://stephaniehicks.github.io/githubPages_tutorial/pages/orphan-ghpages.html
+http://stephaniehicks.github.io/githubPages_tutorial/rss.xml
+http://stephaniehicks.github.io/githubPages_tutorial/sitemap.txt
+
+http://stephaniehicks.github.io/githubPages_tutorial/lessons/2011/12/29/jekyll-introduction

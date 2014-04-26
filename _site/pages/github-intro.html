@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub and GitHub Pages</title>
+    
+    <meta name="author" content="Stephanie Hicks">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Github Pages Tutorial</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>GitHub and GitHub Pages </h1>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    
+<h2 id="git-and-github">git and GitHub</h2>
+<p>There are so many great reasons to use <a href="http://git-scm.com">git</a> and <a href="https://github.com">GitHub</a>. My personal favorite tutorial is by Karl Broman called <a href="http://kbroman.github.io/github_tutorial/">git/github</a> which I highly recommend if you are interested in learning more about git and GitHub.  </p>
+
+<h2 id="github-pages">GitHub Pages</h2>
+<p><a href="https://pages.github.com">GitHub Pages</a> is a really useful resource provided and hosted by GitHub. Here are a few examples of GitHub Pages: </p>
+
+<ul>
+  <li>
+    <p>Write programming books using GitHub and Markdown using <a href="http://www.gitbook.io">GitBook</a></p>
+  </li>
+  <li>
+    <p>Turn R Markdown files into Markdown files using Knitr in R-Studio and make an <a href="http://genomicsclass.github.io/book/">online book</a></p>
+  </li>
+</ul>
+
+<p>The purpose of GitHub Pages is to provide the GitHub user a way to create personal websites for themselves and websites for their projects / repositories. For each registered GitHub account (representing a user or an organization) you can register <strong>one</strong> User Page, but an <strong>unlimited</strong> Project pages. This User Page is a website that will have the domain name <code>http://username.github.io</code> or <code>http://username.github.com</code> where <code>username</code> is replaced by your GitHub username.  The Project Pages are websites which are special repositories that will have the domain name <code>http://username.github.io/myrepo</code> where the name of the repository on GitHub is called <code>myrepo</code>.  </p>
+
+<p>The amazing Karl Broman recently added another tutorial specifically for <a href="http://kbroman.github.io/simple_site/">creating GitHub Pages</a> using his <code>simple_site</code> repository at (https://github.com/kbroman/simple_site).  This tutorial is similar, but uses the <a href="http://jekyllbootstrap.com">Jekyll-Bootstrap</a> repository at (https://github.com/plusjade/jekyll-bootstrap) which can include additional themes.  The main idea of behind both of these repositories is <a href="http://jekyllrb.com">Jekyll</a> discussed next.  </p>
+
+<h2 id="jekyll">Jekyll</h2>
+<p><a href="http://jekyllrb.com">Jekyll</a> is a <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">“a simple blog aware, static site generator”</a> based on files such as <a href="http://daringfireball.net/projects/markdown/">Markdown</a>. Many blogs are written in Jekyll including <a href="https://help.github.com/articles/using-jekyll-with-pages">every GitHub page</a>.  Therefore, it is definitely worth taking the time to understand a little bit about Jekyll, but it can be confusing if you are unfamiliar with it.  <a href="http://jekyllbootstrap.com">Jekyll-Bootstrap</a> takes away a lot of the hassle about Jekyll by allowing the user to create blog-aware websites using markdown with <a href="http://themes.jekyllbootstrap.com">themes</a>. </p>
+
+<p>When you use Jekyll you will be installing a set of files in your GitHub repository that tell GitHub to create html files from the markdown files.  Jekyll-Bootstrap works the same way, except you will now have cool themes to pick from for your website! </p>
+
+<p>Before we discuss more about Jekyll, let’s discuss the difference between a <code>user page</code> and <code>project pages</code>.  </p>
+
+<h2 id="user-pages">User Pages</h2>
+<p>To get a <code>user page</code>, you must create a repository on GitHub named <code>username.github.io</code> where <code>username</code> is replaced by your GitHub username. Once the repository is created on GitHub, you can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> or use your own .html files.  All the files in the <strong>master</strong> branch of this repository are used to publish the website. </p>
+
+<p>If you used the automatic page generator, use <code>git init</code> to initialize the git repository, and fetch the files from GitHub: </p>
+
+<pre><code>$ mkdir username.github.io
+$ cd username.github.io
+$ git init
+$ git remote add origin git@github.com:username/username.github.io
+$ git fetch origin
+$ git checkout master
+$ git pull origin master
+</code></pre>
+
+<p>Note: we are using <code>git checkout</code> to check out the <code>master</code> branch because this is a <code>user page</code>.  When you use the automatic page generator for <code>project pages</code>, you will check out the <strong>gh-pages</strong>. 	</p>
+
+<p>Next, you can edit the files in your <code>username.github.io</code> repository. Once you are happy with the files, use <code>git add</code> to track all the files you want tracked, use <code>git commit</code> to commit the files and push to GitHub: </p>
+
+<pre><code>$ git add .
+$ git commit -m "initial commit of user page"
+$ git push	
+</code></pre>
+
+<p>Don’t worry if it takes a few minutes for the page to show up because there may be a delay up to ten minutes the first time you push the files to GitHub. 	</p>
+
+<h2 id="project-pages">Project Pages</h2>
+
+<p>To create a <code>project page</code>, you don’t have to have actually create a <code>user site</code> if you don’t want to, but the URL will still be <code>http://username.github.io/myrepo</code>.  Create a repository on GitHub. To illustrate the examples below, I will use the name <code>myrepo</code>, but you should change the name from <code>myrepo</code> to whatever is the name of your repository.  <code>Project pages</code> are different than a <code>user page</code> in the sense all the files related to creating the website are kept in a branch called the <strong>gh-pages</strong> branch (not in the <strong>master</strong> branch for a <code>user page</code>). You can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> for <code>project pages</code> (similar to a <code>user page</code>) or again use your own .html files.  </p>
+
+<p>If you used the automatic page generator,  use <code>git init</code> to initialize the git repository, and fetch the files from GitHub: </p>
+
+<pre><code>$ cd myrepo
+$ git init
+$ git remote add origin git@github.com:username/myrepo.git
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
+
+<p>Next, you can edit the files in your <code>myrepo</code> repository. Once you are happy with the files, use <code>git add</code> to track all the files you want tracked, use <code>git commit</code> to commit the files and push to GitHub: </p>
+
+<pre><code>$ git add .
+$ git commit -m "initial commit of project page"
+$ git push origin gh-page
+</code></pre>
+
+<h2 id="generating-a-user-page-or-project-pages-not-using-the-automatic-page-generator">Generating a user page or project pages not using the automatic page generator</h2>
+<p>If you are interested in creating a <code>user page</code> or <code>project pages</code> not using the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> or you don’t have your own .html files already created and you don’t want to edit .html files directly, fear not!   The next section on <a href="pages/githubpages-jekyll.html">Setting up GitHub Pages with Jekyll</a> will allow you to create your website in Markdown (.md) files, but publish in .html files.  </p>
+
+
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Stephanie Hicks
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+

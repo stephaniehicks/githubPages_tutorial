@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Setting up GitHub Pages with Jekyll</title>
+    
+    <meta name="author" content="Stephanie Hicks">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/bootstrap/css/bootstrap.2.2.2.min.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    <!-- atom & rss feed -->
+    <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container-narrow">
+          <a class="brand" href="/">Github Pages Tutorial</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-narrow">
+
+      <div class="content">
+        
+<div class="page-header">
+  <h1>Setting up GitHub Pages with Jekyll </h1>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+    
+<p>Outside of using the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> provided by GitHub or writing your own .html files, there are several ways to set up your repository either for a <code>user page</code> or <code>project page</code> with the initial set of files needed to create a website.  Both of the following ways use <code>jekyll</code> to create beautiful website written in Markdown (.md) files.  </p>
+
+<ol>
+  <li>
+    <p>Use Jekyll directly. </p>
+  </li>
+  <li>
+    <p>Clone a repository which contains all the jekyll files needed to create a website such as the <a href="https://github.com/plusjade/jekyll-bootstrap">jekyll-bootstrap repository</a> or <a href="https://github.com/kbroman/simple_site">Karl Broman’s simple_site repository</a>.</p>
+  </li>
+</ol>
+
+<h2 id="jekyll">Jekyll</h2>
+<p>To get started, I encourage you to follow the instructions on the <a href="https://help.github.com/articles/using-jekyll-with-pages">GitHub Help: Using Jekyll with Pages</a> website. </p>
+
+<h4 id="installing-jekyll">Installing Jekyll</h4>
+<p>The installation of Jekyll depends on <a href="https://www.ruby-lang.org/en/">Ruby</a> and <a href="http://bundler.io">Bundler</a>.  To install Bundler, run the command</p>
+
+<pre><code>$ gem install bundler
+</code></pre>
+
+<p>To install Jekyll, run the command</p>
+
+<pre><code>$ gem install jekyll
+</code></pre>
+
+<h4 id="using-jekyll">Using Jekyll</h4>
+<p>The basic jekyll command to create a basic jekyll directory called <code>myrepo</code> is <code>jekyll new</code>: </p>
+
+<pre><code>$ jekyll new myrepo
+$ cd myrepo
+$ git init
+</code></pre>
+
+<p>If the repo is empty there will be no error messages. If the repo is not empty, it will complain about there being files already in the repo.  Just move the files to a different places temporarily and rerun the command. A new set of files should appear in the directory.  Copy all of the files you moved back into the repo and run this command in the <code>myrepo</code> directory: </p>
+
+<pre><code>$ jekyll build
+$ jekyll serve
+</code></pre>
+
+<p>To view the website locally, go to <a href="http://localhost:4000">http://localhost:4000</a>. Afterwards you can press ctrl-c to stop the process in the terminal.  You can also add the <code>--watch</code> command at the end to force Jekyll to rebuild the site every time you save the file. </p>
+
+<pre><code>$ jekyll serve --watch
+</code></pre>
+
+<p>Create and edit the Markdown files for your website, then commit your changes. </p>
+
+<pre><code>$ git add .
+$ git commit -m "initial page commit"
+</code></pre>
+
+<p>This is a very basic website, but you can edit the Markdown files to personalize it.  If this is repository is meant to be your User Page, you can use the <code>master</code> branch to publish your website.  If this is Project Page, change the name of the <code>master</code> branch to <code>gh-pages</code> and push to GitHub: </p>
+
+<pre><code>$ git branch -m master gh-pages 
+$ git remote add origin git@github.com:username/myrepo.git
+$ git push -u origin gh-pages
+</code></pre>
+
+<h2 id="jekyll-bootstrap">Jekyll-Bootstrap</h2>
+<p><a href="http://jekyllbootstrap.com">Jekyll-Bootstrap</a> is similar to using <code>jekyll</code>, but it takes away a lot of the hassle about Jekyll by allowing the user to create blog-aware websites using markdown with <a href="http://themes.jekyllbootstrap.com">themes</a>. </p>
+
+<h4 id="getting-started-with-jekyll-bootstrap">Getting started with Jekyll-Bootstrap</h4>
+<p>Here I will create a <code>project page</code> called <code>myrepo</code> using Jekyll-Bootstrap. First, use <code>git clone</code> to get a copy of the jekyll-bootstrap repository on Github and change the name of the directory from jekyll-boostrap to your repository’s name (e.g. <code>myrepo</code>). You must remove the .git directory because you don’t want the history of that repository as it will become your website.  Finally, make the directory a new git repository with <code>git init</code>. </p>
+
+<pre><code>$ git clone https://github.com/plusjade/jekyll-bootstrap
+$ mv jekyll-bootstrap myrepo
+$ cd myrepo
+$ rm -rf .git
+$ git init 
+</code></pre>
+
+<p>To quickly view the website as it is locally as it is, run the command in the <code>myrepo</code> directory</p>
+
+<pre><code>$ jekyll build
+$ jekyll serve
+</code></pre>
+
+<p>To view the website locally, go to <a href="http://localhost:4000">http://localhost:4000</a>. Afterwards you can press ctrl-c to stop the process in the terminal.</p>
+
+<h4 id="editing-the-configyml-file">Editing the <code>_config.yml</code> file</h4>
+<p>When you open the <code>index.md</code> file included in the Jekyll-Boostrap download, it will tell you to edit the <code>_config.yml</code> file to add in all of the information about your project.  Open up the <code>_config.yml</code> file and change this information: </p>
+
+<pre><code>title : Jekyll Bootstrap
+tagline: Site Tagline
+author :
+	  name : Name Lastname
+	  email : blah@email.test
+	  github : username
+	  twitter : username
+	  feedburner : feedname
+</code></pre>
+
+<p>Also, you will want to change the <code>production_url</code> to change the <code>username</code> to your Github user name. </p>
+
+<pre><code>production_url : http://username.github.io/myrepo
+BASE_PATH : http://username.github.io/myrepo	
+</code></pre>
+
+<p>Add the following line into the <code>_config.yml</code> file to tell <a href="https://help.github.com/articles/migrating-your-pages-site-from-maruku">GitHub how to interpret the markdown</a>: </p>
+
+<pre><code>markdown: kramdown
+</code></pre>
+
+<p>New pages can be added using the <code>rake</code> command.  To keep the folder clean, make a new directory titled <code>/pages</code> and place the .md files in it.  </p>
+
+<pre><code>$ mkdir pages
+$ rake page name="pages/contactme.md"
+</code></pre>
+
+<p>This will create a new markdown file named <code>contactme</code> in a new directory called <code>pages</code>.  Put all the markdown files in the <code>/pages</code> directory. </p>
+
+<p>Create and edit the Markdown files for your website, then commit your changes. </p>
+
+<pre><code>$ git add .
+$ git commit -m "initial page commit"
+</code></pre>
+
+<p>If this is repository is meant to be your User Page, you can use the <code>master</code> branch to publish your website.  If this is Project Page, change the name of the <code>master</code> branch to <code>gh-pages</code> and push to GitHub: 
+	$ git branch -m master gh-pages 
+	$ git remote add origin git@github.com:username/myrepo.git
+	$ git push -u origin gh-pages</p>
+
+<h4 id="jekyll-bootstrap-themes">Jekyll-Bootstrap Themes</h4>
+
+<p>One of the best parts about using Jekyll-Bootstrap is the fact you can <a href="http://themes.jekyllbootstrap.com">pick themes or create themes for your website!</a>. To <a href="http://jekyllbootstrap.com/usage/jekyll-theming.html">install a new theme</a>, the general syntax is </p>
+
+<pre><code>$ cd myrepo
+$ rake theme:install git="newtheme.git"
+</code></pre>
+
+<p>This will place all the necessary files for the theme in your repository .  You can also switch between themes using <code>$ rake theme:switch name="cooltheme"</code>. </p>
+
+<p>The base themes for a <code>page</code> and <code>post</code> are found in <code>_includes/themes/twitter/</code>.  If are familiar with html and you want to make changes to the .html files, these are the files to edit. </p>
+
+<h2 id="using-karl-bromans-simplesite-repository">Using Karl Broman’s simple_site repository</h2>
+<p>Karl Broman has also provided a GitHub repository called <code>simple_site</code> (http://kbroman.github.io/simple_site/) which you can clone similar the repository from <code>jekyll-bootstrap</code>.  He has provided excellent documentation on creating both User Pages and Project Pages, so I refer you to his website for further details. Briefly, it works very similar to using the jekyll-bootstrap repository: </p>
+
+<pre><code>$ git clone git://github.com/kbroman/simple_site
+$ mv simple_site myrepo
+$ cd myrepo
+$ rm -rf .git
+$ git init 
+</code></pre>
+
+<p>Create and edit the Markdown files for your website, then commit your changes. </p>
+
+<pre><code>$ git add .
+$ git commit -m "initial page commit"
+</code></pre>
+
+<p>This is a very basic website, but you can edit the Markdown files to personalize it.  If this is repository is meant to be your User Page, you can use the <code>master</code> branch to publish your website.  If this is Project Page, change the name of the <code>master</code> branch to <code>gh-pages</code> and push to GitHub: </p>
+
+<pre><code>$ git branch -m master gh-pages 
+$ git remote add origin git@github.com:username/myrepo.git
+$ git push -u origin gh-pages
+</code></pre>
+
+<h2 id="next">Next:</h2>
+<p>Create <a href="pages/orphan-ghpages.html">special Project Pages</a> using <code>--orphan gh-pages</code> branches. This keeps the code for your project in the <code>master</code> branch, but all the files related to the website in an “orphan-ed” branch called <code>gh-pages</code> because it has no history from that point.  </p>
+
+<h2 id="additional-useful-resources">Additional Useful Resources</h2>
+<ul>
+  <li><a href="http://jekyllbootstrap.com/usage/jekyll-quick-start.html">Quick start guide to using jekyll-bootstrap</a> </li>
+  <li><a href="https://help.github.com/articles/using-jekyll-with-pages">GitHub: Using Jekyll with Pages</a></li>
+  <li><a href="http://24ways.org/2013/get-started-with-github-pages/">Get Started with GitHub Pages (Plus Bonus Jekyll) from Anna Debenham</a></li>
+  <li><a href="http://dmayance.com/blogging-with-jekyll-and-github-pages/">Blogging with Jekyll and GitHub Pages</a></li>
+</ul>
+
+
+  </div>
+</div>
+
+
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2014 Stephanie Hicks
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
+
