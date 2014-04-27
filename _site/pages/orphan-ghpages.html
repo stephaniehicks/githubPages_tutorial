@@ -92,9 +92,40 @@
 <div class="row-fluid">
   <div class="span12">
     
-<p>Create special Project Pages using <code>--orphan gh-pages</code> branches. This keeps the code for your project in the <code>master</code> branch, but all the files related to the website in an “orphan-ed” branch called <code>gh-pages</code> because it has no history from that point.  </p>
+<p>The <a href="https://help.github.com/articles/user-organization-and-project-pages">main difference</a> between a User Page and Project Pages: Project Pages are kept in the same repository as the project, except the <strong>gh-pages</strong> branch is used for Project Pages and the <strong>master</strong> branch is used for a User Page.  </p>
 
-<p>More coming soon. </p>
+<p>Let’s say you are interested in building a Project Page for one of your projects but you would like to keep the files for your project separate from the files used to build the Project Page website.  This can easily be done by “orphan”-ing off a <strong>gh-pages</strong> branch of your repository.  This is a special type of repository that keeps the files related to your project in the  <strong>master</strong> branch, but keeps all the files related to the website in an “orphan”-ed branch called <strong>gh-pages</strong>. This new orphan branch will have no history of all the other branches and commits which allows you to make a new history of all the commits associated with just the Project Page website separate from the actual project itself.  </p>
+
+<p>I will create a Project page using Jekyll-Bootstrap for a project with a repository called <code>coolproject</code>, except this time I will used <code>--orphan gh-pages</code> instead of just changing the name of my <strong>master</strong> branch to <strong>gh-pages</strong> as before (<code>git branch -m master gh-pages</code>).  I’m assuming there are already files related to the project in <code>coolproject</code> which have been committed using <code>git commit</code>.  Once you checkout the new <strong>gh-pages</strong> branch, you MUST remove everything from that branch before adding the files for the Project Page using <code>git rm -rf .</code>.   </p>
+
+<pre><code>$ cd coolproject
+$ git checkout --orphan gh-pages
+$ git rm -rf .
+</code></pre>
+
+<p>From there, it’s similar to before. Use <code>jekyll</code> directly or <code>git clone</code> to copy the files using the GitHub <a href="https://github.com/plusjade/jekyll-bootstrap">Jekyll-Bootstrap repository</a> or <a href="https://github.com/kbroman/simple_site">Karl Broman’s simple site repository</a>.  Make sure to make all the <a href="pages/githubpages-jekyll.html">changes to the files</a> depending on the way you create your Project Page.  </p>
+
+<pre><code>$ git clone https://github.com/plusjade/jekyll-bootstrap
+$ mv jekyll-bootstrap coolproject
+$ cd coolproject
+$ rm -rf .git
+$ git init 
+$ git add .
+$ git commit -m "initial project page commit"
+</code></pre>
+
+<p>If you used <code>jekyll</code> or <code>jekyll-bootstrap</code>, you can quickly view the website as it is locally as it is by running the command in the <code>coolproject</code> directory</p>
+
+<pre><code>$ jekyll build
+$ jekyll serve
+</code></pre>
+
+<p>To view the website locally, go to <a href="http://localhost:4000">http://localhost:4000</a>. Afterwards you can press ctrl-c to stop the process in the terminal.  Otherwise, push everything to GitHub and you should be able to view or special Project Page at <code>http://username.github.io/coolproject</code>.</p>
+
+<pre><code>$ git remote add origin git@github.com:username/coolproject.git
+$ git push -u origin gh-pages
+</code></pre>
+
 
   </div>
 </div>

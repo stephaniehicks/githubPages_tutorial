@@ -116,10 +116,10 @@
 
 <p>When you use Jekyll you will be installing a set of files in your GitHub repository that tell GitHub to create html files from the markdown files.  Jekyll-Bootstrap works the same way, except you will now have cool themes to pick from for your website! </p>
 
-<p>Before we discuss more about Jekyll, let’s discuss the difference between a <code>user page</code> and <code>project pages</code>.  </p>
+<p>Before we discuss more about Jekyll, let’s discuss the difference between a User Page and Project Pages.  </p>
 
 <h2 id="user-pages">User Pages</h2>
-<p>To get a <code>user page</code>, you must create a repository on GitHub named <code>username.github.io</code> where <code>username</code> is replaced by your GitHub username. Once the repository is created on GitHub, you can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> or use your own .html files.  All the files in the <strong>master</strong> branch of this repository are used to publish the website. </p>
+<p>To get a User Page, you must create a repository on GitHub named <code>username.github.io</code> where <code>username</code> is replaced by your GitHub username. Once the repository is created on GitHub, you can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> or use your own .html files.  All the files in the <strong>master</strong> branch of this repository are used to publish the website. </p>
 
 <p>If you used the automatic page generator, use <code>git init</code> to initialize the git repository, and fetch the files from GitHub: </p>
 
@@ -132,7 +132,7 @@ $ git checkout master
 $ git pull origin master
 </code></pre>
 
-<p>Note: we are using <code>git checkout</code> to check out the <code>master</code> branch because this is a <code>user page</code>.  When you use the automatic page generator for <code>project pages</code>, you will check out the <strong>gh-pages</strong>. 	</p>
+<p>Note: we are using <code>git checkout</code> to check out the <code>master</code> branch because this is a User Page.  When you use the automatic page generator for Project Pages, you will check out the <strong>gh-pages</strong>. 	</p>
 
 <p>Next, you can edit the files in your <code>username.github.io</code> repository. Once you are happy with the files, use <code>git add</code> to track all the files you want tracked, use <code>git commit</code> to commit the files and push to GitHub: </p>
 
@@ -145,7 +145,7 @@ $ git push
 
 <h2 id="project-pages">Project Pages</h2>
 
-<p>To create a <code>project page</code>, you don’t have to have actually create a <code>user site</code> if you don’t want to, but the URL will still be <code>http://username.github.io/myrepo</code>.  Create a repository on GitHub. To illustrate the examples below, I will use the name <code>myrepo</code>, but you should change the name from <code>myrepo</code> to whatever is the name of your repository.  <code>Project pages</code> are different than a <code>user page</code> in the sense all the files related to creating the website are kept in a branch called the <strong>gh-pages</strong> branch (not in the <strong>master</strong> branch for a <code>user page</code>). You can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> for <code>project pages</code> (similar to a <code>user page</code>) or again use your own .html files.  </p>
+<p>To create a Project Page, you don’t have to have actually create a <code>user site</code> if you don’t want to, but the URL will still be <code>http://username.github.io/myrepo</code>.  Create a repository on GitHub. To illustrate the examples below, I will use the name <code>myrepo</code>, but you should change the name from <code>myrepo</code> to whatever is the name of your repository.  Project Pages are different than a User Page in the sense all the files related to creating the website are kept in a branch called the <strong>gh-pages</strong> branch (not in the <strong>master</strong> branch for a User Page). You can use the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> for Project Pages (similar to a User Page) or again use your own .html files.  </p>
 
 <p>If you used the automatic page generator,  use <code>git init</code> to initialize the git repository, and fetch the files from GitHub: </p>
 
@@ -160,11 +160,11 @@ $ git checkout gh-pages
 
 <pre><code>$ git add .
 $ git commit -m "initial commit of project page"
-$ git push origin gh-page
+$ git push -u origin gh-pages
 </code></pre>
 
 <h2 id="generating-a-user-page-or-project-pages-not-using-the-automatic-page-generator">Generating a user page or project pages not using the automatic page generator</h2>
-<p>If you are interested in creating a <code>user page</code> or <code>project pages</code> not using the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> or you don’t have your own .html files already created and you don’t want to edit .html files directly, fear not!   The next section on <a href="pages/githubpages-jekyll.html">Setting up GitHub Pages with Jekyll</a> will allow you to create your website in Markdown (.md) files, but publish in .html files.  </p>
+<p>If you are interested in creating a User Page or Project Pages not using the <a href="https://help.github.com/articles/creating-pages-with-the-automatic-generator">automatic page generator</a> or you don’t have your own .html files already created and you don’t want to edit .html files directly, fear not!   The next section on <a href="pages/githubpages-jekyll.html">Setting up GitHub Pages with Jekyll</a> will allow you to create your website in Markdown (.md) files, but publish in .html files.  </p>
 
 
   </div>

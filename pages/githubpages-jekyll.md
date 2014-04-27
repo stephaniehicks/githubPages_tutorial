@@ -6,7 +6,7 @@ description:
 {% include JB/setup %}
 
 
-Outside of using the [automatic page generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator) provided by GitHub or writing your own .html files, there are several ways to set up your repository either for a `user page` or `project page` with the initial set of files needed to create a website.  Both of the following ways use `jekyll` to create beautiful website written in Markdown (.md) files.  
+Outside of using the [automatic page generator](https://help.github.com/articles/creating-pages-with-the-automatic-generator) provided by GitHub or writing your own .html files, there are several ways to set up your repository either for a User Page or Project Page with the initial set of files needed to create a website.  Both of the following ways use `jekyll` to create beautiful website written in Markdown (.md) files.  
 
 1. Use Jekyll directly. 
 
@@ -57,7 +57,7 @@ This is a very basic website, but you can edit the Markdown files to personalize
 [Jekyll-Bootstrap](http://jekyllbootstrap.com) is similar to using `jekyll`, but it takes away a lot of the hassle about Jekyll by allowing the user to create blog-aware websites using markdown with [themes](http://themes.jekyllbootstrap.com). 
 
 #### Getting started with Jekyll-Bootstrap
-Here I will create a `project page` called `myrepo` using Jekyll-Bootstrap. First, use `git clone` to get a copy of the jekyll-bootstrap repository on Github and change the name of the directory from jekyll-boostrap to your repository's name (e.g. `myrepo`). You must remove the .git directory because you don't want the history of that repository as it will become your website.  Finally, make the directory a new git repository with `git init`. 
+Here I will create a Project Page called `myrepo` using Jekyll-Bootstrap. First, use `git clone` to get a copy of the jekyll-bootstrap repository on Github and change the name of the directory from jekyll-bootstrap to your repository's name (e.g. `myrepo`). You must remove the .git directory because you don't want the history of that repository as it will become your website.  Finally, make the directory a new git repository with `git init`. 
 
 	$ git clone https://github.com/plusjade/jekyll-bootstrap
 	$ mv jekyll-bootstrap myrepo
@@ -73,7 +73,7 @@ To quickly view the website as it is locally as it is, run the command in the `m
 To view the website locally, go to [http://localhost:4000](http://localhost:4000). Afterwards you can press ctrl-c to stop the process in the terminal.
 
 #### Editing the `_config.yml` file
-When you open the `index.md` file included in the Jekyll-Boostrap download, it will tell you to edit the `_config.yml` file to add in all of the information about your project.  Open up the `_config.yml` file and change this information: 
+When you open the `index.md` file included in the Jekyll-Bootstrap download, it will tell you to edit the `_config.yml` file to add in all of the information about your project.  Open up the `_config.yml` file and change this information: 
 
 	title : Jekyll Bootstrap
 	tagline: Site Tagline
