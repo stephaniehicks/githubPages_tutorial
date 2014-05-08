@@ -92,7 +92,12 @@ Also, you will want to change the `production_url` to change the `username` to y
 Add the following line into the `_config.yml` file to tell [GitHub how to interpret the markdown](https://help.github.com/articles/migrating-your-pages-site-from-maruku): 
 
 	markdown: kramdown
+	
+#### Using MathJax with Jekyll
+If you use $\LaTeX$, it's easy to incorporate [MathJax](http://www.mathjax.org/mathjax-community-update-5/) into the the .html file to be able to write $\LaTeX$ code.   In the `_includes/themes/twitter/default.html`, add the following lines of code from [this gist](https://gist.github.com/stephaniehicks/4d221a3815da9c25c02a). 
 
+
+#### Create new pages	
 New pages can be added using the `rake` command.  To keep the folder clean, make a new directory titled `/pages` and place the .md files in it.  
 
 	$ mkdir pages
@@ -100,6 +105,7 @@ New pages can be added using the `rake` command.  To keep the folder clean, make
 	
 This will create a new markdown file named `contactme` in a new directory called `pages`.  Put all the markdown files in the `/pages` directory. 
 
+#### Edit and commit changes
 Create and edit the Markdown files for your website, then commit your changes. 
 
 	$ git add .
@@ -110,8 +116,8 @@ If this is repository is meant to be your User Page, you can use the `master` br
 	$ git remote add origin git@github.com:username/myrepo.git
 	$ git push -u origin gh-pages
 
-#### Jekyll-Bootstrap Themes
 
+#### Jekyll-Bootstrap Themes
 One of the best parts about using Jekyll-Bootstrap is the fact you can [pick themes or create themes for your website!](http://themes.jekyllbootstrap.com). To [install a new theme](http://jekyllbootstrap.com/usage/jekyll-theming.html), the general syntax is 
 
 	$ cd myrepo

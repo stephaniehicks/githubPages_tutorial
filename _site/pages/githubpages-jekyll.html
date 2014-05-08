@@ -30,6 +30,19 @@
     <!-- atom & rss feed -->
     <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="/rss.xml" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
+    
+    <!-- knitr javascript -->
+    <script src="/assets/themes/twitter/knitr.js" type="text/javascript"></script>
+
+    <!-- mathjax javascript -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
 
   </head>
 
@@ -194,6 +207,10 @@ BASE_PATH : http://username.github.io/myrepo
 <pre><code>markdown: kramdown
 </code></pre>
 
+<h4 id="using-mathjax-with-jekyll">Using MathJax with Jekyll</h4>
+<p>If you use $\LaTeX$, it’s easy to incorporate <a href="http://www.mathjax.org/mathjax-community-update-5/">MathJax</a> into the the .html file to be able to write $\LaTeX$ code.   In the <code>_includes/themes/twitter/default.html</code>, add the following lines of code from <a href="https://gist.github.com/stephaniehicks/4d221a3815da9c25c02a">this gist</a>. </p>
+
+<h4 id="create-new-pages">Create new pages</h4>
 <p>New pages can be added using the <code>rake</code> command.  To keep the folder clean, make a new directory titled <code>/pages</code> and place the .md files in it.  </p>
 
 <pre><code>$ mkdir pages
@@ -202,6 +219,7 @@ $ rake page name="pages/contactme.md"
 
 <p>This will create a new markdown file named <code>contactme</code> in a new directory called <code>pages</code>.  Put all the markdown files in the <code>/pages</code> directory. </p>
 
+<h4 id="edit-and-commit-changes">Edit and commit changes</h4>
 <p>Create and edit the Markdown files for your website, then commit your changes. </p>
 
 <pre><code>$ git add .
@@ -214,7 +232,6 @@ $ git commit -m "initial page commit"
 	$ git push -u origin gh-pages</p>
 
 <h4 id="jekyll-bootstrap-themes">Jekyll-Bootstrap Themes</h4>
-
 <p>One of the best parts about using Jekyll-Bootstrap is the fact you can <a href="http://themes.jekyllbootstrap.com">pick themes or create themes for your website!</a>. To <a href="http://jekyllbootstrap.com/usage/jekyll-theming.html">install a new theme</a>, the general syntax is </p>
 
 <pre><code>$ cd myrepo
