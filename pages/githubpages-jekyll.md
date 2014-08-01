@@ -131,9 +131,10 @@ The base themes for a `page` and `post` are found in `_includes/themes/twitter/`
 Karl Broman has also provided a GitHub repository called `simple_site` (http://kbroman.github.io/simple_site/) which you can clone similar the repository from `jekyll-bootstrap`.  He has provided excellent documentation on creating both User Pages and Project Pages, so I refer you to his website for further details. Briefly, it works very similar to using the jekyll-bootstrap repository: 
 
 	$ git clone git://github.com/kbroman/simple_site
-	$ mv simple_site myrepo
-	$ cd myrepo
+	$ cd simple_site
 	$ rm -rf .git
+	$ cd ../myrepo
+	$ cp -r ../simple_site/. .
 	$ git init 
 	
 Create and edit the Markdown files for your website, then commit your changes. 
